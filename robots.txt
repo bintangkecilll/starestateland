@@ -1,0 +1,23 @@
+User-agent: *
+Allow: /
+
+# Block akses ke API routes (tidak perlu di-index)
+Disallow: /api/
+
+# Block akses ke halaman admin atau dashboard user (jika ada)
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /login/
+Disallow: /register/
+
+# Block parameter pencarian internal untuk mencegah duplicate content
+Disallow: /*?query=
+Disallow: /*?q=
+Disallow: /search/
+
+# Opsional: Jika menggunakan Next.js, jangan block /_next/ sepenuhnya
+# karena Google perlu merender JavaScript/CSS. 
+# Hanya block folder private jika ada.
+
+# PENTING: Ganti URL di bawah jika nama file sitemap Anda berbeda
+Sitemap: https://starestateland.vercel.app/sitemap.xml

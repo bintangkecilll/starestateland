@@ -17,16 +17,12 @@
   <style>
     /* ========== VARIABLES (EDITORIAL EMERALD THEME) ========== */
     :root {
-      /* Warna Dasar Index (Untuk Nav/Footer) */
       --bg-body-index: #E1F5FE; 
-      
-      /* Warna Khusus Resources (Kontras: Cerdas & Mewah) */
-      --res-bg: #F8F9FA;         /* Paper White / Abu Sangat Terang */
+      --res-bg: #F8F9FA;         
       --res-surface: #FFFFFF;    
       --res-primary: #064E3B;    /* Deep Emerald Green */
       --res-accent: #D4AF37;     /* Gold */
-      --res-text: #1F2937;       /* Dark Grey text */
-      
+      --res-text: #1F2937;       
       --container: 1140px;
     }
 
@@ -35,7 +31,6 @@
 
     body { 
       margin: 0; font-family: 'Poppins', sans-serif;
-      /* Background "Paper" */
       background-color: var(--res-bg); 
       color: var(--res-text);
       line-height: 1.7; font-size: 16px;
@@ -47,70 +42,29 @@
     .wrap { width: min(var(--container), 92%); margin-inline: auto; }
     .section-pad { padding: 90px 0; }
 
-    /* Utility Text Colors */
-    .text-gold { color: var(--res-accent) !important; }
-
-    /* ========== NAVBAR (Tetap Terang - Index Style) ========== */
-    .nav {
-      position: sticky; top: 0; z-index: 1000;
-      background: rgba(225, 245, 254, 0.98); /* Konsisten dengan Index */
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(0,0,0,0.05); padding: 15px 0;
-    }
+    /* Navbar */
+    .nav { position: sticky; top: 0; z-index: 1000; background: rgba(225, 245, 254, 0.98); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(0,0,0,0.05); padding: 15px 0; }
     .nav-inner { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; position: relative; }
     .nav-links { display: flex; gap: 30px; }
     .nav-right { justify-content: flex-end; }
-    
     .nav-links a { font-weight: 500; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; color: #1e293b; }
     .nav-links a:hover { color: var(--res-primary); }
-    
-    /* Active State (Emerald Green) */
     .nav-links a.active { color: var(--res-primary); font-weight: 700; border-bottom: 2px solid var(--res-accent); }
-
     .brand-logo { display: flex; flex-direction: column; align-items: center; text-align: center; }
     .nav-toggle { display: none; font-size: 2rem; cursor: pointer; color: #333; }
-
-    /* Mobile Menu */
-    .mobile-menu {
-      display: none; position: absolute; top: 100%; left: 0; width: 100%;
-      background: var(--bg-body-index); border-bottom: 3px solid var(--res-primary);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-      flex-direction: column; align-items: center; padding: 0; overflow: hidden;
-      max-height: 0; transition: max-height 0.4s ease-out; z-index: 999;
-    }
+    .mobile-menu { display: none; position: absolute; top: 100%; left: 0; width: 100%; background: var(--bg-body-index); border-bottom: 3px solid var(--res-primary); box-shadow: 0 10px 20px rgba(0,0,0,0.1); flex-direction: column; align-items: center; padding: 0; overflow: hidden; max-height: 0; transition: max-height 0.4s ease-out; z-index: 999; }
     .mobile-menu.active { max-height: 400px; padding: 20px 0; }
-    .mobile-menu a {
-      font-family: 'Playfair Display', serif; font-size: 1.2rem; color: #1e293b;
-      font-weight: 600; padding: 10px 0; width: 100%; text-align: center;
-      border-bottom: 1px solid rgba(0,0,0,0.05);
-    }
+    .mobile-menu a { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: #1e293b; font-weight: 600; padding: 10px 0; width: 100%; text-align: center; border-bottom: 1px solid rgba(0,0,0,0.05); }
 
-    /* ========== HERO RESOURCES (EDITORIAL STYLE) ========== */
-    .res-hero {
-      background: var(--res-primary); color: #fff;
-      padding: 120px 0 100px 0; text-align: center; position: relative; overflow: hidden;
-    }
-    /* Abstract Pattern Background */
-    .res-hero::before {
-        content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
-        background: radial-gradient(circle, rgba(255,255,255,0.05) 10%, transparent 10%);
-        background-size: 30px 30px; opacity: 0.3; transform: rotate(15deg);
-    }
-
+    /* Hero */
+    .res-hero { background: var(--res-primary); color: #fff; padding: 120px 0 100px 0; text-align: center; position: relative; overflow: hidden; }
+    .res-hero::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.05) 10%, transparent 10%); background-size: 30px 30px; opacity: 0.3; transform: rotate(15deg); }
     .res-hero-content { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
-    .res-hero h1 { color: #fff; font-size: clamp(2.5rem, 5vw, 4.5rem); margin-bottom: 20px; }
-    .res-hero p { font-size: 1.2rem; color: #D1D5DB; margin-bottom: 40px; font-weight: 300; }
+    .res-hero h1 { font-size: clamp(2.5rem, 5vw, 4.5rem); margin-bottom: 20px; color: #fff; }
+    .res-hero p { font-size: 1.2rem; color: #D1D5DB; margin-bottom: 0; font-weight: 300; }
 
-    /* Category Filter (Pill Shape) */
-    .cat-filter { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
-    .cat-pill {
-        padding: 10px 25px; border-radius: 50px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
-        color: #fff; cursor: pointer; transition: 0.3s; font-size: 0.9rem;
-    }
-    .cat-pill:hover, .cat-pill.active { background: var(--res-accent); border-color: var(--res-accent); color: #000; font-weight: 600; }
-
-    /* ========== FEATURED ARTICLE (Large Card) ========== */
-    .featured-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 0; background: #fff; box-shadow: 0 20px 40px rgba(0,0,0,0.05); border-radius: 8px; overflow: hidden; margin-top: -50px; position: relative; z-index: 10; }
+    /* Featured Grid */
+    .featured-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 0; background: #fff; box-shadow: 0 20px 40px rgba(0,0,0,0.05); border-radius: 8px; overflow: hidden; margin-top: -50px; position: relative; z-index: 10; margin-bottom: 50px; }
     .feat-img { height: 100%; min-height: 400px; }
     .feat-img img { width: 100%; height: 100%; object-fit: cover; }
     .feat-content { padding: 60px; display: flex; flex-direction: column; justify-content: center; }
@@ -119,36 +73,42 @@
     .read-more { display: inline-flex; align-items: center; gap: 10px; font-weight: 600; color: var(--res-primary); margin-top: 20px; }
     .read-more:hover { gap: 15px; }
 
-    /* ========== LATEST ARTICLES (Grid) ========== */
-    .article-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 50px; }
-    .article-card {
-        background: #fff; border-radius: 8px; overflow: hidden; transition: 0.3s;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.03); border: 1px solid rgba(0,0,0,0.05);
-    }
+    /* SEARCH BAR SECTION */
+    .search-container { max-width: 800px; margin: 0 auto 50px auto; position: relative; }
+    .search-box { display: flex; align-items: center; background: #fff; padding: 10px; border-radius: 50px; box-shadow: 0 10px 25px rgba(6, 78, 59, 0.1); border: 1px solid rgba(6, 78, 59, 0.1); }
+    .search-box i { font-size: 1.5rem; color: var(--res-primary); margin-left: 20px; margin-right: 15px; }
+    .search-box input { flex: 1; border: none; outline: none; font-size: 1.1rem; font-family: 'Poppins', sans-serif; color: #333; padding: 10px 0; }
+    .search-box input::placeholder { color: #999; }
+
+    /* Articles */
+    .article-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-bottom: 50px; }
+    .article-card { background: #fff; border-radius: 8px; overflow: hidden; transition: 0.3s; box-shadow: 0 5px 15px rgba(0,0,0,0.03); border: 1px solid rgba(0,0,0,0.05); display: flex; flex-direction: column; }
     .article-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.08); }
     .art-img { height: 220px; position: relative; overflow: hidden; }
     .art-img img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
     .article-card:hover .art-img img { transform: scale(1.05); }
-    
-    .art-cat {
-        position: absolute; top: 15px; left: 15px; background: #fff; padding: 5px 12px;
-        font-size: 0.75rem; font-weight: 700; color: var(--res-primary); border-radius: 4px;
-    }
-    
-    .art-body { padding: 25px; }
+    .art-cat { position: absolute; top: 15px; left: 15px; background: #fff; padding: 5px 12px; font-size: 0.75rem; font-weight: 700; color: var(--res-primary); border-radius: 4px; }
+    .art-body { padding: 25px; flex: 1; display: flex; flex-direction: column; }
     .art-date { font-size: 0.85rem; color: #9CA3AF; margin-bottom: 10px; display: block; }
     .art-body h3 { font-size: 1.4rem; margin-bottom: 15px; line-height: 1.4; }
     .art-desc { font-size: 0.95rem; color: #6B7280; line-height: 1.6; margin-bottom: 20px; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+    .art-link { margin-top: auto; font-weight: 600; color: var(--res-primary); display: flex; align-items: center; gap: 5px; }
+    .art-link:hover { gap: 10px; }
 
-    /* ========== NEWSLETTER ========== */
+    /* PAGINATION */
+    .pagination-container { display: flex; justify-content: center; align-items: center; gap: 20px; padding-top: 20px; border-top: 1px solid #eee; }
+    .page-btn { width: 50px; height: 50px; border-radius: 50%; border: 1px solid #ddd; background: #fff; display: grid; place-items: center; cursor: pointer; transition: 0.3s; color: var(--res-primary); font-size: 1.2rem; }
+    .page-btn:hover { background: var(--res-primary); color: #fff; border-color: var(--res-primary); }
+    .page-info { font-weight: 600; font-family: 'Playfair Display', serif; font-size: 1.2rem; color: #333; }
+
+    /* Newsletter & Footer */
     .newsletter-section { background: #fff; border-top: 1px solid #eee; text-align: center; }
     .news-box { max-width: 600px; margin: 0 auto; }
     .news-form { display: flex; gap: 10px; margin-top: 30px; }
     .news-form input { flex: 1; padding: 15px; border: 1px solid #ddd; border-radius: 4px; outline: none; }
     .btn-sub { background: var(--res-primary); color: #fff; border: none; padding: 15px 30px; font-weight: 600; cursor: pointer; border-radius: 4px; transition: 0.3s; }
     .btn-sub:hover { background: #04382b; }
-
-    /* ========== FOOTER (Sama dengan Index) ========== */
+    
     footer { background: #F8FDFF; border-top: 1px solid #E2E8F0; padding-top: 80px; margin-top: 0; }
     .foot-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 30px; padding-bottom: 50px; }
     .foot-logo svg { height: 40px; margin-bottom: 15px; }
@@ -159,19 +119,12 @@
     .foot-col ul li a { font-size: 0.95rem; color: #333; }
     .foot-bottom { border-top: 1px solid #eee; padding: 25px 0; display: flex; justify-content: space-between; font-size: 0.9rem; color: #888; }
 
-    /* RESPONSIVE */
     @media (max-width: 960px) {
-      .nav-links { display: none; } .nav-toggle { display: block; right: 0; position: relative; }
-      .nav-inner { display: flex; justify-content: space-between; } .mobile-menu { display: flex; }
-      
       .featured-grid { grid-template-columns: 1fr; margin-top: 0; }
       .feat-img { min-height: 250px; }
       .feat-content { padding: 30px; }
-      .feat-content h2 { font-size: 1.8rem; }
-      
       .article-grid { grid-template-columns: 1fr; }
       .news-form { flex-direction: column; }
-      
       .foot-grid { grid-template-columns: 1fr; text-align: left; }
       .foot-bottom { flex-direction: column; gap: 10px; }
     }
@@ -187,7 +140,6 @@
         <a href="renting.html">Renting</a>
         <a href="selling.html">Selling</a>
       </div>
-
       <a href="index.html" class="brand-logo">
         <svg width="200" height="50" viewBox="0 0 200 50" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M25 10L29 20H40L31 27L34 38L25 32L16 38L19 27L10 20H21L25 10Z" fill="#D4AF37"/>
@@ -195,23 +147,19 @@
             <text x="52" y="45" font-family="'Poppins', sans-serif" font-weight="400" font-size="10" letter-spacing="3" fill="#64748b">LAND CORP</text>
         </svg>
       </a>
-
       <div class="nav-links nav-right">
         <a href="about.html">About</a>
-        <a href="resources.html" class="active">Resources</a> <a href="#contact">Contact</a>
+        <a href="resources.html" class="active">Resources</a>
+        <a href="#contact">Contact</a>
       </div>
-
-      <div class="nav-toggle" onclick="toggleMenu()">
-        <i class="bi bi-list"></i>
-      </div>
-
+      <div class="nav-toggle" onclick="toggleMenu()"><i class="bi bi-list"></i></div>
       <div class="mobile-menu" id="mobileMenu">
         <a href="buying.html">Buying</a>
         <a href="renting.html">Renting</a>
         <a href="selling.html">Selling</a>
         <a href="about.html">About</a>
         <a href="resources.html">Resources</a>
-        <a href="#contact">Contact</a>
+        <a href="contact.html">Contact</a>
       </div>
     </div>
   </nav>
@@ -219,117 +167,106 @@
   <section class="res-hero">
     <div class="wrap res-hero-content">
       <h1>Market Intelligence &<br>Luxury Lifestyle</h1>
-      <p>Wawasan mendalam seputar pasar properti, tren desain, dan strategi investasi untuk klien cerdas.</p>
-      
-      <div class="cat-filter">
-        <div class="cat-pill active">All Topics</div>
-        <div class="cat-pill">Market Trends</div>
-        <div class="cat-pill">Interior Design</div>
-        <div class="cat-pill">Legal Advice</div>
-        <div class="cat-pill">Celebrity Homes</div>
-      </div>
+      <p>Wawasan mendalam seputar pasar properti, tren desain, dan strategi investasi.</p>
     </div>
   </section>
-
-  <div class="wrap">
-    <div class="featured-grid">
-      <div class="feat-img">
-        <img src="https://placehold.co/800x600/333/FFF?text=Featured+Article+Image" alt="Featured">
-      </div>
-      <div class="feat-content">
-        <span class="meta-tag">Market Trends • 5 Min Read</span>
-        <h2>Why 2026 is The Golden Year for Property Investment in Southeast Asia</h2>
-        <p style="color:#666; margin-bottom:20px;">Analisis komprehensif mengenai pergeseran ekonomi makro dan peluang aset yang tidak boleh dilewatkan tahun ini.</p>
-        <a href="#" class="read-more">Read Full Story <i class="bi bi-arrow-right"></i></a>
-      </div>
-    </div>
-  </div>
-
-  <section class="section-pad">
+<br>
+  <section class="section-pad" style="padding-top:0;">
     <div class="wrap">
-      <div class="section-title" style="margin-bottom:40px;">
-        <h3>Latest Editorials</h3>
+      
+      <div class="search-container">
+        <div class="search-box">
+            <i class="bi bi-search"></i>
+            <input type="text" id="searchInput" placeholder="Cari artikel, topik, atau kata kunci..." onkeyup="filterArticles()">
+        </div>
       </div>
 
       <div class="article-grid">
-        <div class="article-card">
-          <div class="art-img">
-            <img src="https://placehold.co/600x400/EEE/333?text=Interior+Design" alt="Design">
-            <span class="art-cat">Design</span>
-          </div>
-          <div class="art-body">
-            <span class="art-date">Oct 24, 2025</span>
-            <h3>Minimalist Luxury: The New Standard for High-End Apartments</h3>
-            <p class="art-desc">Bagaimana konsep 'less is more' meningkatkan nilai sewa apartemen premium hingga 30%.</p>
-            <a href="#" class="read-more">Read More</a>
-          </div>
-        </div>
-
-        <div class="article-card">
-          <div class="art-img">
-            <img src="https://placehold.co/600x400/DDD/333?text=Legal+Guide" alt="Legal">
-            <span class="art-cat">Legal</span>
-          </div>
-          <div class="art-body">
-            <span class="art-date">Oct 20, 2025</span>
-            <h3>Understanding Property Tax for Foreign Investors in Indonesia</h3>
-            <p class="art-desc">Panduan lengkap mengenai regulasi terbaru kepemilikan properti bagi warga negara asing.</p>
-            <a href="#" class="read-more">Read More</a>
-          </div>
-        </div>
-
-        <div class="article-card">
-          <div class="art-img">
-            <img src="https://placehold.co/600x400/CCC/333?text=Neighborhood" alt="Area Guide">
-            <span class="art-cat">Area Guide</span>
-          </div>
-          <div class="art-body">
-            <span class="art-date">Oct 15, 2025</span>
-            <h3>Hidden Gems: Emerging Neighborhoods in South Jakarta</h3>
-            <p class="art-desc">Kawasan yang sedang naik daun dengan potensi capital gain tertinggi di tahun mendatang.</p>
-            <a href="#" class="read-more">Read More</a>
-          </div>
-        </div>
-
-        <div class="article-card">
-          <div class="art-img">
-            <img src="https://placehold.co/600x400/BBB/333?text=Smart+Home" alt="Tech">
-            <span class="art-cat">Technology</span>
-          </div>
-          <div class="art-body">
-            <span class="art-date">Oct 10, 2025</span>
-            <h3>Smart Home Integrations That Actually Add Value</h3>
-            <p class="art-desc">Teknologi rumah pintar apa saja yang dicari pembeli kelas atas saat ini?</p>
-            <a href="#" class="read-more">Read More</a>
-          </div>
-        </div>
-
-         <div class="article-card">
+    <div class="article-card" data-title="Green Living Eco Friendly Sustainability">
             <div class="art-img">
-              <img src="https://placehold.co/600x400/AAA/333?text=Renovation" alt="Reno">
-              <span class="art-cat">Renovation</span>
-            </div>
-            <div class="art-body">
-              <span class="art-date">Oct 05, 2025</span>
-              <h3>ROI Focused Renovation: Where to Spend Your Money</h3>
-              <p class="art-desc">Tips renovasi strategis untuk meningkatkan harga jual tanpa menguras tabungan.</p>
-              <a href="#" class="read-more">Read More</a>
-            </div>
-          </div>
-
-           <div class="article-card">
-            <div class="art-img">
-              <img src="https://placehold.co/600x400/999/333?text=Sustainability" alt="Eco">
+              <img src="img/apart.jpg" alt="Eco">
               <span class="art-cat">Sustainability</span>
             </div>
             <div class="art-body">
               <span class="art-date">Oct 01, 2025</span>
               <h3>Green Living: The Rise of Eco-Friendly Estates</h3>
               <p class="art-desc">Mengapa properti ramah lingkungan kini menjadi incaran utama keluarga milenial mapan.</p>
-              <a href="#" class="read-more">Read More</a>
+              <a href="green-living.html" class="art-link">Read More <i class="bi bi-arrow-right-short"></i></a>
             </div>
           </div>
+
+        <div class="article-card" data-title="Property Tax Foreign Investors Legal">
+          <div class="art-img">
+            <img src="img/hotel.jpg" alt="Legal">
+            <span class="art-cat">Legal</span>
+          </div>
+          <div class="art-body">
+            <span class="art-date">Oct 20, 2025</span>
+            <h3>Understanding Property Tax for Foreign Investors</h3>
+            <p class="art-desc">Panduan lengkap mengenai regulasi terbaru kepemilikan properti bagi warga negara asing di Indonesia.</p>
+            <a href="property-tax.html" class="art-link">Read More <i class="bi bi-arrow-right-short"></i></a>
+          </div>
+        </div>
+
+        <div class="article-card" data-title="Hidden Gems South Jakarta Neighborhood">
+          <div class="art-img">
+            <img src="img/rumah.jpg" alt="Area">
+            <span class="art-cat">Area Guide</span>
+          </div>
+          <div class="art-body">
+            <span class="art-date">Oct 15, 2025</span>
+            <h3>Hidden Gems: Emerging Neighborhoods in South Jakarta</h3>
+            <p class="art-desc">Kawasan yang sedang naik daun dengan potensi capital gain tertinggi di tahun mendatang.</p>
+            <a href="hidden-gems.html" class="art-link">Read More <i class="bi bi-arrow-right-short"></i></a>
+          </div>
+        </div>
+
+        <div class="article-card" data-title="Smart Home Technology Value">
+          <div class="art-img">
+            <img src="img/rumah.jpg" alt="Tech">
+            <span class="art-cat">Technology</span>
+          </div>
+          <div class="art-body">
+            <span class="art-date">Oct 10, 2025</span>
+            <h3>Smart Home Integrations That Actually Add Value</h3>
+            <p class="art-desc">Teknologi rumah pintar apa saja yang dicari pembeli kelas atas saat ini? Jangan salah pilih gadget.</p>
+            <a href="smart-home.html" class="art-link">Read More <i class="bi bi-arrow-right-short"></i></a>
+          </div>
+        </div>
+
+         <div class="article-card" data-title="Renovation ROI Strategy">
+            <div class="art-img">
+              <img src="img/hotel.jpg" alt="Reno">
+              <span class="art-cat">Renovation</span>
+            </div>
+            <div class="art-body">
+              <span class="art-date">Oct 05, 2025</span>
+              <h3>ROI Focused Renovation: Where to Spend Your Money</h3>
+              <p class="art-desc">Tips renovasi strategis untuk meningkatkan harga jual tanpa menguras tabungan Anda secara berlebihan.</p>
+              <a href="renovation-roi.html" class="art-link">Read More <i class="bi bi-arrow-right-short"></i></a>
+            </div>
+          </div>
+      <div class="article-card" data-title="Minimalist Luxury Apartment Design">
+          <div class="art-img">
+            <img src="img/apart.jpg" alt="Design">
+            <span class="art-cat">Design</span>
+          </div>
+          <div class="art-body">
+            <span class="art-date">Oct 24, 2025</span>
+            <h3>Minimalist Luxury: The New Standard for High-End Apartments</h3>
+            <p class="art-desc">Bagaimana konsep 'less is more' meningkatkan nilai sewa apartemen premium hingga 30% di kawasan metropolitan.</p>
+            <a href="minimalist-luxury.html" class="art-link">Read More <i class="bi bi-arrow-right-short"></i></a>
+          </div>
+        </div>
       </div>
+      
+
+      <div class="pagination-container">
+          <button class="page-btn"><i class="bi bi-chevron-left"></i></button>
+          <span class="page-info">Page 1 of 1</span>
+          <button class="page-btn"><i class="bi bi-chevron-right"></i></button>
+      </div>
+
     </div>
   </section>
 
@@ -395,10 +332,9 @@
 
   <style>
     .floating-container { position: fixed; bottom: 30px; right: 30px; z-index: 9999; display: flex; flex-direction: column; gap: 15px; align-items: center; }
-    .float-btn { width: 55px; height: 55px; border-radius: 50%; display: grid; place-items: center; color: #fff; font-size: 26px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); transition: all 0.3s; cursor: pointer; text-decoration: none; border: 2px solid rgba(255,255,255,0.2); }
-    .float-btn:hover { transform: translateY(-5px); color: #fff; border-color: #fff; }
+    .float-btn { width: 55px; height: 55px; border-radius: 50%; display: grid; place-items: center; color: #fff; font-size: 26px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: all 0.3s; cursor: pointer; text-decoration: none; }
+    .float-btn:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.3); color: #fff; }
     .btn-wa { background: #25D366; } .btn-top { background: #D4AF37; opacity: 0; visibility: hidden; transform: translateY(20px); } .btn-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
-    @media (max-width: 768px) { .floating-container { bottom: 20px; right: 20px; } .float-btn { width: 45px; height: 45px; font-size: 22px; } }
   </style>
   <div class="floating-container">
     <a href="#" class="float-btn btn-top" id="backToTop"><i class="bi bi-arrow-up-short"></i></a>
@@ -407,20 +343,28 @@
 
   <script>
     function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('active'); }
-    
-    // Back to Top Logic
     const backToTopBtn = document.getElementById("backToTop");
     window.onscroll = function() {
-      if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-        backToTopBtn.classList.add("show");
-      } else {
-        backToTopBtn.classList.remove("show");
-      }
+      if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) backToTopBtn.classList.add("show");
+      else backToTopBtn.classList.remove("show");
     };
-    backToTopBtn.addEventListener("click", function(e) {
-      e.preventDefault();
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
+    backToTopBtn.addEventListener("click", function(e) { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); });
+
+    // FILTER SCRIPT
+    function filterArticles() {
+        let input = document.getElementById('searchInput').value.toLowerCase();
+        let cards = document.querySelectorAll('.article-card');
+        
+        cards.forEach(card => {
+            let title = card.getAttribute('data-title').toLowerCase();
+            let text = card.innerText.toLowerCase();
+            if (title.includes(input) || text.includes(input)) {
+                card.style.display = "flex";
+            } else {
+                card.style.display = "none";
+            }
+        });
+    }
   </script>
 
 </body>

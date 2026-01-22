@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+  
+  <title>Smart Home Integrations That Actually Add Value — Star Estate Resources</title>
+  <meta name="description" content="Panduan integrasi teknologi Smart Home yang meningkatkan nilai properti mewah. Dari keamanan biometrik hingga manajemen energi otomatis.">
+  <meta property="og:title" content="Smart Home Integrations That Actually Add Value">
+  <meta property="og:description" content="Stop buying gadgets. Start investing in infrastructure. A guide for luxury homeowners.">
+  <meta property="og:image" content="https://placehold.co/1200x600/222/FFF?text=Smart+Home+Future">
+  <meta name="author" content="Star Estate Tech Division">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+  <style>
+    /* ========== VARIABLES (EDITORIAL EMERALD THEME) ========== */
+    :root {
+      --res-bg: #F8F9FA;         
+      --res-surface: #FFFFFF;    
+      --res-primary: #064E3B;    /* Deep Emerald Green */
+      --res-accent: #D4AF37;     /* Gold */
+      --res-text: #1F2937;       
+      --container: 1140px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { overflow-x: hidden; width: 100%; }
+
+    body { 
+      margin: 0; font-family: 'Poppins', sans-serif;
+      background-color: var(--res-bg); 
+      color: var(--res-text);
+      line-height: 1.8; font-size: 16px;
+    }
+
+    h1, h2, h3, h4 { font-family: 'Playfair Display', serif; font-weight: 700; color: var(--res-primary); margin-top: 1.5em; margin-bottom: 0.5em; }
+    a { text-decoration: none; color: inherit; transition: 0.3s; }
+    img { max-width: 100%; display: block; border-radius: 8px; }
+    .wrap { width: min(var(--container), 92%); margin-inline: auto; }
+    
+    /* Navbar Mini */
+    .nav-mini { background: #fff; padding: 15px 0; border-bottom: 1px solid #eee; position: sticky; top:0; z-index:100; }
+    .nav-mini .wrap { display: flex; justify-content: space-between; align-items: center; }
+    .btn-back { display: flex; align-items: center; gap: 8px; font-weight: 600; color: #666; }
+    .btn-back:hover { color: var(--res-accent); }
+
+    /* Breadcrumb */
+    .breadcrumb { margin: 30px 0 10px 0; font-size: 0.9rem; color: #666; }
+    .breadcrumb span { color: var(--res-accent); font-weight: 600; }
+
+    /* Article Layout */
+    .article-container { max-width: 800px; margin: 0 auto; background: #fff; padding: 50px; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.03); }
+    .article-meta { display: flex; gap: 15px; font-size: 0.9rem; color: #888; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px; }
+    .article-title { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.2; margin-top: 10px; margin-bottom: 30px; }
+    .main-img-caption { font-size: 0.85rem; color: #666; text-align: center; margin-top: 10px; font-style: italic; }
+
+    /* TOC */
+    .toc-box { background: #F3F4F6; padding: 25px; border-radius: 8px; border-left: 4px solid var(--res-primary); margin: 40px 0; }
+    .toc-header { display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.2rem; }
+    .toc-list { list-style: none; padding: 0; margin-top: 15px; display: none; }
+    .toc-list.active { display: block; }
+    .toc-list li { margin-bottom: 8px; }
+    .toc-list li a { color: #333; font-size: 0.95rem; }
+    .toc-list li a:hover { color: var(--res-accent); text-decoration: underline; }
+    .toc-list li.toc-h3 { margin-left: 20px; font-size: 0.9rem; }
+
+    /* Content Styling */
+    .content p { margin-bottom: 20px; text-align: justify; }
+    .content ul, .content ol { margin-bottom: 20px; padding-left: 20px; }
+    .content li { margin-bottom: 10px; }
+    
+    /* Blockquote */
+    blockquote { border-left: 5px solid var(--res-accent); background: #FFFCF5; padding: 30px; margin: 40px 0; font-family: 'Playfair Display', serif; font-size: 1.4rem; font-style: italic; color: #333; }
+    
+    /* Promo Box */
+    .promo-box { background: linear-gradient(135deg, #064E3B 0%, #032F24 100%); color: #fff; padding: 40px; border-radius: 8px; text-align: center; margin: 50px 0; position: relative; overflow: hidden; }
+    .promo-box h3 { color: #fff; margin-top: 0; }
+    .promo-box::before { content:''; position: absolute; top:-50%; left:-50%; width:200%; height:200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 60%); pointer-events: none; }
+    .btn-promo { display: inline-block; background: var(--res-accent); color: #000; padding: 12px 30px; border-radius: 50px; font-weight: 700; margin-top: 20px; transition: 0.3s; }
+    .btn-promo:hover { background: #fff; }
+
+    /* Author & Share */
+    .author-box { display: flex; gap: 20px; align-items: center; border-top: 1px solid #eee; border-bottom: 1px solid #eee; padding: 30px 0; margin-top: 50px; }
+    .author-img { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; }
+    .share-box { margin-top: 20px; display: flex; gap: 10px; }
+    .share-btn { width: 40px; height: 40px; border-radius: 50%; border: 1px solid #ddd; display: grid; place-items: center; color: #555; transition: 0.3s; }
+    .share-btn:hover { background: var(--res-primary); color: #fff; border-color: var(--res-primary); }
+
+    /* FAQ */
+    .faq-section { margin-top: 40px; background: #F9FAFB; padding: 30px; border-radius: 8px; }
+    .faq-item { margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 15px; }
+    .faq-q { font-weight: 700; color: var(--res-primary); cursor: pointer; display: flex; justify-content: space-between; }
+    .faq-a { display: none; margin-top: 10px; color: #555; font-size: 0.95rem; }
+    .faq-a.show { display: block; }
+
+    /* Related Articles */
+    .related-section { margin-top: 80px; padding-top: 50px; border-top: 1px solid #eee; }
+    .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 30px; }
+    .rel-card { background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+    .rel-img { height: 200px; width: 100%; object-fit: cover; }
+    .rel-body { padding: 20px; }
+    .rel-title { font-size: 1.2rem; font-weight: 700; margin-bottom: 10px; display: block; font-family: 'Playfair Display', serif; }
+
+    @media (max-width: 768px) {
+        .article-container { padding: 20px; }
+        .related-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav-mini">
+    <div class="wrap">
+        <a href="resources.html" class="btn-back"><i class="bi bi-arrow-left"></i> Back to Resources</a>
+        <div style="font-weight:700; font-family:'Playfair Display', serif;">STAR ESTATE JOURNAL</div>
+    </div>
+  </nav>
+
+  <div class="wrap">
+    <div class="breadcrumb">Resources > Technology > <span>Smart Home Integrations</span></div>
+    
+    <div class="article-container" id="articleContent">
+        
+        <div class="article-meta">
+            <span>OCT 10, 2025</span>
+            <span>•</span>
+            <span style="color:var(--res-primary); font-weight:700;">Technology</span>
+        </div>
+        
+        <h1 class="article-title">Smart Home Integrations That Actually Add Value: Moving Beyond Gimmicks</h1>
+        
+        <img src="img/rumah.jpg" alt="Smart Home Control Interface" style="width:100%; margin-bottom:10px;">
+        <p class="main-img-caption">Sistem automasi rumah terintegrasi kini menjadi standar baru dalam properti mewah.</p>
+
+        <div class="toc-box">
+            <div class="toc-header" onclick="toggleTOC()">
+                Table of Contents <i class="bi bi-chevron-down"></i>
+            </div>
+            <ul class="toc-list" id="tocList">
+                </ul>
+        </div>
+
+        <div class="content" id="mainContent">
+            <p>Satu dekade yang lalu, "Smart Home" mungkin hanya berarti lampu yang bisa berubah warna lewat aplikasi ponsel. Namun, di tahun 2026, definisi tersebut telah berevolusi secara drastis. Pembeli properti kelas atas (*High-Net-Worth Individuals*) tidak lagi terkesan dengan gadget murahan yang berdiri sendiri (*standalone devices*).</p>
+            <p>Mereka mencari ekosistem. Mereka mencari infrastruktur. Artikel ini akan membahas jenis integrasi teknologi yang tidak hanya membuat hidup lebih nyaman, tetapi juga secara nyata meningkatkan nilai jual kembali (*resale value*) properti Anda.</p>
+
+            <h2>1. Ekosistem vs Gadget Terpisah</h2>
+            <p>Kesalahan terbesar pemilik rumah saat melakukan *upgrade* teknologi adalah membeli perangkat yang tidak saling bicara. Lampu merk A, kunci pintu merk B, dan kamera CCTV merk C. Ini menciptakan "App Fatigue" (kelelahan membuka banyak aplikasi).</p>
+            <p>Nilai tambah yang sesungguhnya ada pada sistem terintegrasi seperti <strong>Control4</strong>, <strong>Crestron</strong>, atau <strong>Savant</strong>. Sistem ini menyatukan pencahayaan, keamanan, iklim, dan hiburan ke dalam satu antarmuka yang elegan, baik itu panel dinding, tablet, atau perintah suara yang canggih.</p>
+
+            <h2>2. Keamanan Biometrik dan AI Surveillance</h2>
+            <p>Keamanan adalah prioritas nomor satu. Kunci pintu pintar dengan *fingerprint* sudah biasa. Standar baru adalah:</p>
+            <ul>
+                <li><strong>Facial Recognition Entry:</strong> Pintu gerbang yang mengenali wajah penghuni dan membukakan pintu secara otomatis tanpa sentuhan.</li>
+                <li><strong>AI Analytics CCTV:</strong> Kamera yang bisa membedakan antara kucing lewat, kurir paket, atau orang asing yang mencurigakan, dan hanya mengirim notifikasi jika benar-benar penting.</li>
+                <li><strong>Integrated Intercom:</strong> Menjawab bel pintu dari belahan dunia manapun seolah Anda ada di rumah.</li>
+            </ul>
+
+            <div style="background:#f0f9ff; padding:20px; border-left:4px solid #064E3B; margin:30px 0;">
+                <strong>Baca Juga:</strong> <a href="renovation-roi.html" style="text-decoration:underline; color:#064E3B;">Strategi Renovasi untuk Meningkatkan ROI</a>
+            </div>
+
+            <h2>3. Manajemen Energi dan Iklim</h2>
+            <p>Dengan meningkatnya kesadaran lingkungan dan biaya energi, *Smart Climate Control* menjadi fitur wajib. Termostat pintar (seperti Ecobee atau Nest) yang terintegrasi dengan sensor okupansi dapat menghemat biaya listrik hingga 20% tanpa mengorbankan kenyamanan.</p>
+            <h3>Automated Shading (Tirai Otomatis)</h3>
+            <p>Tirai yang menutup otomatis saat matahari terik untuk menjaga suhu ruangan tetap dingin, dan membuka saat pagi hari untuk *natural alarm clock*. Ini bukan hanya soal kemewahan, tapi juga perlindungan terhadap furnitur dan karya seni dari sinar UV yang merusak.</p>
+
+            <blockquote>"Smart home yang sejati adalah teknologi yang tidak terlihat (*invisible*). Ia bekerja di latar belakang, melayani kebutuhan penghuni tanpa harus terus-menerus diatur."</blockquote>
+
+            <img src="img/blog.jpg" alt="Dashboard Energi" style="width:100%; margin:30px 0;">
+            <p class="main-img-caption">Visualisasi penggunaan energi real-time membantu efisiensi hunian.</p>
+
+            <h2>4. Pencahayaan Sirkadian (Circadian Lighting)</h2>
+            <p>Ini adalah tren kesehatan (*wellness*) terbesar dalam teknologi rumah. Sistem pencahayaan yang meniru siklus matahari alami: cahaya putih terang dan sejuk di siang hari untuk produktivitas, dan berubah menjadi hangat dan redup di malam hari untuk memicu hormon melatonin agar tidur lebih nyenyak. Fitur ini sangat diminati di pasar properti ultra-luxury.</p>
+
+            <div class="promo-box">
+                <h3>Ingin Upgrade Rumah Anda Menjadi Smart Home?</h3>
+                <p>Konsultasikan kebutuhan automasi rumah Anda dengan mitra teknologi terpercaya kami.</p>
+                <a href="https://api.whatsapp.com/send?phone=6281234567890&text=Halo%20Star%20Estate,%20saya%20tertarik%20info%20Smart%20Home." target="_blank" class="btn-promo"><i class="bi bi-whatsapp"></i> Konsultasi Gratis</a>
+            </div>
+
+            <h2>Kesimpulan</h2>
+            <p>Saat merencanakan integrasi smart home, berpikirlah tentang infrastruktur jangka panjang, bukan tren sesaat. Pastikan kabel jaringan (CAT6/CAT7) terpasang rapi di dinding, dan pilih sistem yang memiliki dukungan purna jual yang baik.</p>
+            <p>Rumah yang "pintar" secara fungsional akan selalu memiliki daya tarik lebih tinggi di mata pembeli masa depan yang semakin melek teknologi.</p>
+        </div>
+
+        <div class="faq-section">
+            <h3>FAQ: Smart Home Investment</h3>
+            <div class="faq-item">
+                <div class="faq-q" onclick="toggleFAQ(0)">Apakah teknologi smart home cepat usang? <i class="bi bi-plus-lg"></i></div>
+                <div class="faq-a" id="faq-0">Perangkat keras (hardware) mungkin butuh upgrade tiap 5-7 tahun, namun infrastruktur kabel (wiring) yang baik bisa bertahan puluhan tahun.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q" onclick="toggleFAQ(1)">Bagaimana dengan risiko peretasan (hacking)? <i class="bi bi-plus-lg"></i></div>
+                <div class="faq-a" id="faq-1">Sistem profesional (seperti Control4) jauh lebih aman daripada perangkat DIY karena menggunakan jaringan tertutup dan enkripsi tingkat lanjut.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q" onclick="toggleFAQ(2)">Apakah menambah nilai jual rumah? <i class="bi bi-plus-lg"></i></div>
+                <div class="faq-a" id="faq-2">Ya, terutama untuk segmen milenial mapan. Rumah yang sudah "Smart-Ready" bisa terjual lebih cepat dengan harga premium.</div>
+            </div>
+        </div>
+
+        <div class="author-box">
+            <img src="https://placehold.co/100x100/333/FFF?text=RT" alt="Randy Tech" class="author-img">
+            <div>
+                <h4 style="margin:0;">Randy Tanubrata</h4>
+                <p style="font-size:0.9rem; margin:5px 0;">Technology Integration Specialist di Star Estate Land. Penggemar IoT dan arsitektur modern.</p>
+                <div class="share-box">
+                    <a href="#" class="share-btn"><i class="bi bi-whatsapp"></i></a>
+                    <a href="#" class="share-btn"><i class="bi bi-linkedin"></i></a>
+                    <a href="#" class="share-btn"><i class="bi bi-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="related-section">
+        <h3 style="text-align:center;">Baca Juga Artikel Terkait</h3>
+        <div class="related-grid">
+            <div class="rel-card">
+                <img src="img/hotel.jpg" class="rel-img">
+                <div class="rel-body">
+                    <span style="font-size:0.8rem; color:#888;">RENOVATION</span>
+                    <a href="renovation-roi.html" class="rel-title">ROI Focused Renovation Strategy</a>
+                    <p style="font-size:0.9rem; color:#666;">Renovasi cerdas untung maksimal...</p>
+                    <a href="renovation-roi.html" style="color:var(--res-primary); font-weight:600;">Baca selengkapnya</a>
+                </div>
+            </div>
+            <div class="rel-card">
+                <img src="img/apart.jpg" class="rel-img">
+                <div class="rel-body">
+                    <span style="font-size:0.8rem; color:#888;">SUSTAINABILITY</span>
+                    <a href="green-living.html" class="rel-title">Green Living: Eco-Friendly Estates</a>
+                    <p style="font-size:0.9rem; color:#666;">Tren hunian ramah lingkungan...</p>
+                    <a href="green-living.html" style="color:var(--res-primary); font-weight:600;">Baca selengkapnya</a>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+
+  <footer style="background: #F8FDFF; border-top: 1px solid #E2E8F0; padding: 40px 0; margin-top: 80px;">
+    <div class="wrap" style="text-align: center; color: #888; font-size: 0.9rem;">
+        &copy; 2026 Star Estate Land. All Rights Reserved.
+    </div>
+  </footer>
+
+  <style>
+    .floating-container { position: fixed; bottom: 30px; right: 30px; z-index: 9999; display: flex; flex-direction: column; gap: 15px; align-items: center; }
+    .float-btn { width: 55px; height: 55px; border-radius: 50%; display: grid; place-items: center; color: #fff; font-size: 26px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: 0.3s; text-decoration: none; }
+    .btn-wa { background: #25D366; } .btn-top { background: #D4AF37; }
+  </style>
+  <div class="floating-container">
+    <a href="#" class="float-btn btn-top" id="backToTop"><i class="bi bi-arrow-up-short"></i></a>
+    <a href="#" class="float-btn btn-wa"><i class="bi bi-whatsapp"></i></a>
+  </div>
+
+  <script>
+    function toggleTOC() { document.getElementById('tocList').classList.toggle('active'); }
+    function toggleFAQ(i) { document.getElementById(`faq-${i}`).classList.toggle('show'); }
+
+    // Auto Generate TOC from H2 & H3
+    window.onload = function() {
+        const content = document.getElementById('mainContent');
+        const headers = content.querySelectorAll('h2, h3');
+        const list = document.getElementById('tocList');
+        
+        headers.forEach((h, index) => {
+            h.id = `section-${index}`;
+            const li = document.createElement('li');
+            li.className = h.tagName === 'H3' ? 'toc-h3' : 'toc-h2';
+            li.innerHTML = `<a href="#section-${index}">${h.innerText}</a>`;
+            list.appendChild(li);
+        });
+
+        // Back To Top Logic
+        const backToTopBtn = document.getElementById("backToTop");
+        window.onscroll = function() {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) backToTopBtn.classList.add("show");
+            else backToTopBtn.classList.remove("show");
+        };
+        backToTopBtn.addEventListener("click", function(e) { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); });
+    }
+  </script>
+
+</body>
+</html>
