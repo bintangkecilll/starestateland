@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+  
+  <title>Contact Us — Star Estate Land</title>
+  <meta name="description" content="Hubungi tim Star Estate Land. Kunjungi kantor pusat kami atau kirimkan pesan untuk konsultasi properti." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+  <style>
+    /* ========== VARIABLES (CORPORATE SLATE THEME) ========== */
+    :root {
+      /* Warna Dasar Index (Untuk Nav/Footer) */
+      --bg-body-index: #E1F5FE; 
+      
+      /* Warna Khusus Contact (Kontras: Gelap & Profesional) */
+      --con-bg: #1A1A1A;         /* Dark Charcoal */
+      --con-surface: #252525;    /* Slightly lighter dark */
+      --con-accent: #C5A059;     /* Muted Bronze/Gold */
+      --con-text: #F3F4F6;       /* White Smoke */
+      --con-text-muted: #9CA3AF;
+      
+      --container: 1140px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { overflow-x: hidden; width: 100%; }
+
+    body { 
+      margin: 0; font-family: 'Poppins', sans-serif;
+      /* Background Gelap */
+      background-color: var(--con-bg); 
+      color: var(--con-text);
+      line-height: 1.6; font-size: 16px;
+    }
+
+    h1, h2, h3, h4 { font-family: 'Playfair Display', serif; font-weight: 700; color: #fff; }
+    a { text-decoration: none; color: inherit; transition: 0.3s; }
+    img { max-width: 100%; display: block; }
+    .wrap { width: min(var(--container), 92%); margin-inline: auto; }
+    .section-pad { padding: 90px 0; }
+
+    /* Utility Text Colors */
+    .text-accent { color: var(--con-accent) !important; }
+
+    /* ========== NAVBAR (Tetap Terang - Index Style) ========== */
+    .nav {
+      position: sticky; top: 0; z-index: 1000;
+      background: rgba(225, 245, 254, 0.98); /* Konsisten dengan Index */
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0,0,0,0.05); padding: 15px 0;
+    }
+    .nav-inner { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; position: relative; }
+    .nav-links { display: flex; gap: 30px; }
+    .nav-right { justify-content: flex-end; }
+    
+    .nav-links a { font-weight: 500; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; color: #1e293b; }
+    .nav-links a:hover { color: var(--con-accent); }
+    
+    /* Active State (Bronze) */
+    .nav-links a.active { color: var(--con-accent); font-weight: 700; border-bottom: 2px solid var(--con-accent); }
+
+    .brand-logo { display: flex; flex-direction: column; align-items: center; text-align: center; }
+    .nav-toggle { display: none; font-size: 2rem; cursor: pointer; color: #333; }
+
+    /* Mobile Menu */
+    .mobile-menu {
+      display: none; position: absolute; top: 100%; left: 0; width: 100%;
+      background: var(--bg-body-index); border-bottom: 3px solid var(--con-accent);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      flex-direction: column; align-items: center; padding: 0; overflow: hidden;
+      max-height: 0; transition: max-height 0.4s ease-out; z-index: 999;
+    }
+    .mobile-menu.active { max-height: 400px; padding: 20px 0; }
+    .mobile-menu a {
+      font-family: 'Playfair Display', serif; font-size: 1.2rem; color: #1e293b;
+      font-weight: 600; padding: 10px 0; width: 100%; text-align: center;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+
+    /* ========== HERO CONTACT (MINIMALIST DARK) ========== */
+    .contact-hero {
+      padding: 120px 0 80px 0; text-align: center;
+      background: radial-gradient(circle at center, #2a2a2a 0%, var(--con-bg) 70%);
+    }
+    .contact-hero h1 { font-size: clamp(3rem, 5vw, 4.5rem); margin-bottom: 20px; color: var(--con-accent); }
+    .contact-hero p { font-size: 1.3rem; color: var(--con-text-muted); max-width: 600px; margin: 0 auto; font-weight: 300; }
+
+    /* ========== CONTACT GRID (CARD STYLE) ========== */
+    .contact-grid { 
+        display: grid; grid-template-columns: 1fr 1.5fr; gap: 50px; 
+        align-items: start; margin-top: -30px; 
+    }
+    
+    /* Info Card */
+    .info-card {
+        background: var(--con-surface); padding: 50px; border-radius: 4px;
+        border: 1px solid rgba(255,255,255,0.05); height: 100%;
+    }
+    .info-item { margin-bottom: 40px; }
+    .info-item:last-child { margin-bottom: 0; }
+    .info-label { 
+        text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; 
+        color: var(--con-accent); margin-bottom: 10px; display: block; font-weight: 600;
+    }
+    .info-value { font-size: 1.2rem; color: #fff; line-height: 1.6; }
+    .info-value a { border-bottom: 1px solid rgba(255,255,255,0.2); }
+    .info-value a:hover { border-color: var(--con-accent); color: var(--con-accent); }
+
+    /* Form Card */
+    .form-card {
+        background: #fff; padding: 50px; border-radius: 4px; color: #333;
+        box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    }
+    .form-card h3 { color: #1A1A1A; font-size: 2rem; margin-bottom: 30px; }
+    
+    .form-group { margin-bottom: 25px; }
+    .form-group label { 
+        display: block; font-size: 0.85rem; font-weight: 600; 
+        text-transform: uppercase; color: #666; margin-bottom: 8px; 
+    }
+    .form-group input, .form-group textarea {
+        width: 100%; padding: 15px; border: 1px solid #ddd; border-radius: 4px;
+        font-family: 'Poppins', sans-serif; font-size: 1rem; transition: 0.3s;
+        background: #FAFAFA;
+    }
+    .form-group input:focus, .form-group textarea:focus {
+        border-color: var(--con-accent); background: #fff; outline: none;
+    }
+    
+    .btn-submit {
+        background: #1A1A1A; color: #fff; border: none; padding: 18px 40px;
+        font-size: 1rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;
+        cursor: pointer; transition: 0.3s; width: 100%; border-radius: 4px;
+    }
+    .btn-submit:hover { background: var(--con-accent); color: #000; }
+
+    /* ========== MAP SECTION (GRAYSCALE) ========== */
+    .map-section { height: 500px; width: 100%; position: relative; overflow: hidden; }
+    /* Filter Grayscale agar map terlihat elegan & menyatu dengan tema gelap */
+    .map-frame { 
+        width: 100%; height: 100%; border: 0; 
+        filter: grayscale(100%) invert(90%) contrast(90%); 
+    }
+
+    /* ========== FOOTER (Sama dengan Index - Kembali Terang) ========== */
+    footer { background: #F8FDFF; border-top: none; padding-top: 80px; margin-top: 0; color: #1e293b; }
+    /* Override dark text specifically for footer inside dark page */
+    footer h5 { color: #64748b !important; }
+    footer p, footer li, footer a { color: #333 !important; }
+    footer .foot-logo text { fill: #333 !important; }
+
+    .foot-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 30px; padding-bottom: 50px; }
+    .foot-logo svg { height: 40px; margin-bottom: 15px; }
+    .social-icons { display: flex; gap: 10px; margin-top: 20px; }
+    .social-icons a { width: 35px; height: 35px; border-radius: 50%; border: 1px solid #ccc; display: grid; place-items: center; color: #555; }
+    .foot-col h5 { font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px; color: #64748b; margin-bottom: 20px; }
+    .foot-col ul li { margin-bottom: 12px; }
+    .foot-col ul li a { font-size: 0.95rem; color: #333; }
+    .foot-bottom { border-top: 1px solid #eee; padding: 25px 0; display: flex; justify-content: space-between; font-size: 0.9rem; color: #888; }
+
+    /* RESPONSIVE */
+    @media (max-width: 960px) {
+      .nav-links { display: none; } .nav-toggle { display: block; right: 0; position: relative; }
+      .nav-inner { display: flex; justify-content: space-between; } .mobile-menu { display: flex; }
+      
+      .contact-grid { grid-template-columns: 1fr; gap: 0; }
+      .info-card { border-radius: 4px 4px 0 0; padding: 40px; }
+      .form-card { border-radius: 0 0 4px 4px; padding: 30px; }
+      
+      .foot-grid { grid-template-columns: 1fr; text-align: left; }
+      .foot-bottom { flex-direction: column; gap: 10px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="nav">
+    <div class="wrap nav-inner">
+      <div class="nav-links">
+        <a href="buying.html">Buying</a>
+        <a href="renting.html">Renting</a>
+        <a href="selling.html">Selling</a>
+      </div>
+
+      <a href="index.html" class="brand-logo">
+        <svg width="200" height="50" viewBox="0 0 200 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M25 10L29 20H40L31 27L34 38L25 32L16 38L19 27L10 20H21L25 10Z" fill="#D4AF37"/>
+            <text x="50" y="32" font-family="'Playfair Display', serif" font-weight="700" font-size="22" fill="#1e293b">Star Estate</text>
+            <text x="52" y="45" font-family="'Poppins', sans-serif" font-weight="400" font-size="10" letter-spacing="3" fill="#64748b">LAND CORP</text>
+        </svg>
+      </a>
+
+      <div class="nav-links nav-right">
+        <a href="about.html">About</a>
+        <a href="resources.html">Resources</a>
+        <a href="contact.html" class="active">Contact</a> </div>
+
+      <div class="nav-toggle" onclick="toggleMenu()">
+        <i class="bi bi-list"></i>
+      </div>
+
+      <div class="mobile-menu" id="mobileMenu">
+        <a href="buying.html">Buying</a>
+        <a href="renting.html">Renting</a>
+        <a href="selling.html">Selling</a>
+        <a href="about.html">About</a>
+        <a href="resources.html">Resources</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="contact-hero">
+    <div class="wrap">
+      <h1>Start the Conversation.</h1>
+      <p>Apakah Anda ingin membeli, menjual, atau sekadar berkonsultasi? Pintu kami selalu terbuka untuk mendiskusikan masa depan aset Anda.</p>
+    </div>
+  </section>
+
+  <section class="section-pad" style="padding-top: 30px;">
+    <div class="wrap contact-grid">
+      
+      <div class="info-card">
+        <div class="info-item">
+          <span class="info-label">Headquarters</span>
+          <div class="info-value">
+            Star Estate Tower, Level 42<br>
+            Jl. Jendral Sudirman Kav. 52-53<br>
+            Jakarta Selatan, 12190
+          </div>
+        </div>
+        
+        <div class="info-item">
+          <span class="info-label">Direct Contact</span>
+          <div class="info-value">
+            <a href="tel:+622155558888">+62 21 5555 8888</a><br>
+            <a href="mailto:vip@starestate.com">vip@starestate.com</a>
+          </div>
+        </div>
+        
+        <div class="info-item">
+          <span class="info-label">Office Hours</span>
+          <div class="info-value">
+            Mon - Fri: 09:00 - 18:00<br>
+            Sat: By Appointment Only
+          </div>
+        </div>
+
+        <div class="info-item" style="margin-top:50px;">
+           <span class="info-label">Follow Us</span>
+           <div style="font-size:1.5rem; display:flex; gap:15px; margin-top:10px;">
+             <a href="#"><i class="bi bi-instagram"></i></a>
+             <a href="#"><i class="bi bi-linkedin"></i></a>
+             <a href="#"><i class="bi bi-youtube"></i></a>
+           </div>
+        </div>
+      </div>
+
+      <div class="form-card">
+        <h3>Send us a Message</h3>
+        <form>
+          <div class="form-group">
+            <label>Full Name</label>
+            <input type="text" placeholder="John Doe">
+          </div>
+          <div class="form-group" style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+            <div>
+               <label>Email Address</label>
+               <input type="email" placeholder="john@example.com">
+            </div>
+            <div>
+               <label>Phone Number</label>
+               <input type="tel" placeholder="+62...">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Subject</label>
+            <input type="text" placeholder="I'm interested in...">
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea rows="5" placeholder="Tell us more about your inquiry..."></textarea>
+          </div>
+          <button type="submit" class="btn-submit">Send Message</button>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="map-section">
+    <iframe class="map-frame" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.299933682973!2d106.80895531476902!3d-6.224122995493976!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f1504543d83b%3A0x6c07153d347710b8!2sSCBD%20Jakarta!5e0!3m2!1sen!2sid!4v1625550000000!5m2!1sen!2sid" allowfullscreen="" loading="lazy"></iframe>
+  </section>
+
+  <footer id="contact">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div class="foot-col">
+           <a href="index.html" class="foot-logo">
+             <svg width="180" height="40" viewBox="0 0 180 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20 5L23 15H35L26 22L29 33L20 27L11 33L14 22L5 15H17L20 5Z" fill="#D4AF37"/>
+                <text x="45" y="28" font-family="'Playfair Display', serif" font-weight="700" font-size="20" fill="#333">Star Estate</text>
+            </svg>
+           </a>
+           <p style="font-size:0.9rem;">Melayani area sekitarnya selama lebih dari 24 tahun.</p>
+           <div class="social-icons">
+             <a href="#"><i class="bi bi-facebook"></i></a>
+             <a href="#"><i class="bi bi-instagram"></i></a>
+             <a href="#"><i class="bi bi-twitter"></i></a>
+           </div>
+        </div>
+        <div class="foot-col">
+          <h5>Services</h5>
+          <ul>
+            <li><a href="buying.html">Buying</a></li>
+            <li><a href="renting.html">Renting</a></li>
+            <li><a href="selling.html">Selling</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="#">Careers</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h5>Contact</h5>
+          <ul>
+            <li style="font-size:0.9rem;">(08) 6380 1212</li>
+            <li style="font-size:0.9rem;">info@starestate.com</li>
+            <li style="font-size:0.9rem;">1/590 Hay Street, USA</li>
+          </ul>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <div>&copy; 2026 Star Estate Land.</div>
+        <div>Design by Star Team</div>
+      </div>
+    </div>
+  </footer>
+
+  <style>
+    .floating-container { position: fixed; bottom: 30px; right: 30px; z-index: 9999; display: flex; flex-direction: column; gap: 15px; align-items: center; }
+    .float-btn { width: 55px; height: 55px; border-radius: 50%; display: grid; place-items: center; color: #fff; font-size: 26px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); transition: all 0.3s; cursor: pointer; text-decoration: none; border: 2px solid rgba(255,255,255,0.2); }
+    .float-btn:hover { transform: translateY(-5px); color: #fff; border-color: #fff; }
+    .btn-wa { background: #25D366; } .btn-top { background: #D4AF37; opacity: 0; visibility: hidden; transform: translateY(20px); } .btn-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
+    @media (max-width: 768px) { .floating-container { bottom: 20px; right: 20px; } .float-btn { width: 45px; height: 45px; font-size: 22px; } }
+  </style>
+  <div class="floating-container">
+    <a href="#" class="float-btn btn-top" id="backToTop"><i class="bi bi-arrow-up-short"></i></a>
+    <a href="https://api.whatsapp.com/send?phone=6281234567890" target="_blank" class="float-btn btn-wa"><i class="bi bi-whatsapp"></i></a>
+  </div>
+
+  <script>
+    function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('active'); }
+    
+    // Back to Top Logic
+    const backToTopBtn = document.getElementById("backToTop");
+    window.onscroll = function() {
+      if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        backToTopBtn.classList.add("show");
+      } else {
+        backToTopBtn.classList.remove("show");
+      }
+    };
+    backToTopBtn.addEventListener("click", function(e) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  </script>
+
+</body>
+</html>

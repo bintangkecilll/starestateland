@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+  
+  <title>Selling with Star Estate — Maximize Your Property Value</title>
+  <meta name="description" content="Jual properti Anda dengan harga terbaik bersama Star Estate Land. Strategi pemasaran eksklusif dan jaringan pembeli global." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+  <style>
+    /* ========== VARIABLES (DARK LUXURY THEME) ========== */
+    :root {
+      /* Warna Dasar Index (Untuk Nav/Footer agar selaras) */
+      --bg-body-index: #E1F5FE; 
+      
+      /* Warna Khusus Selling (Kontras Gelap) */
+      --sell-bg-dark: #0B1120;   /* Sangat Gelap (Hampir Hitam) */
+      --sell-bg-card: #151E32;   /* Navy Gelap untuk Kartu */
+      --sell-gold: #D4AF37;      /* Emas Mewah */
+      --sell-text-light: #E2E8F0;
+      --sell-text-muted: #94A3B8;
+      
+      --container: 1140px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { overflow-x: hidden; width: 100%; }
+
+    body { 
+      margin: 0; font-family: 'Poppins', sans-serif;
+      /* Background Utama Gelap */
+      background-color: var(--sell-bg-dark); 
+      color: var(--sell-text-light);
+      line-height: 1.6; font-size: 16px;
+    }
+
+    h1, h2, h3, h4 { font-family: 'Playfair Display', serif; font-weight: 700; color: #fff; }
+    p { color: var(--sell-text-muted); }
+    a { text-decoration: none; color: inherit; transition: 0.3s; }
+    img { max-width: 100%; display: block; }
+    .wrap { width: min(var(--container), 92%); margin-inline: auto; }
+    .section-pad { padding: 100px 0; }
+
+    /* Utility Text Colors */
+    .text-gold { color: var(--sell-gold) !important; }
+    .text-white { color: #fff !important; }
+
+    /* ========== NAVBAR (Tetap Terang Agar Selaras dengan Index) ========== */
+    .nav {
+      position: sticky; top: 0; z-index: 1000;
+      background: rgba(225, 245, 254, 0.98); /* Tetap warna Index */
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0,0,0,0.05); padding: 15px 0;
+    }
+    .nav-inner { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; position: relative; }
+    .nav-links { display: flex; gap: 30px; }
+    .nav-right { justify-content: flex-end; }
+    
+    /* Link di navbar tetap gelap karena background navbar terang */
+    .nav-links a { font-weight: 500; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; color: #1e293b; }
+    .nav-links a:hover { color: var(--sell-gold); }
+    
+    /* Active State */
+    .nav-links a.active { color: var(--sell-gold); font-weight: 700; }
+
+    .brand-logo { display: flex; flex-direction: column; align-items: center; text-align: center; }
+    .nav-toggle { display: none; font-size: 2rem; cursor: pointer; color: #333; }
+
+    /* Mobile Menu */
+    .mobile-menu {
+      display: none; position: absolute; top: 100%; left: 0; width: 100%;
+      background: var(--bg-body-index); border-bottom: 3px solid var(--sell-gold);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      flex-direction: column; align-items: center; padding: 0; overflow: hidden;
+      max-height: 0; transition: max-height 0.4s ease-out; z-index: 999;
+    }
+    .mobile-menu.active { max-height: 400px; padding: 20px 0; }
+    .mobile-menu a {
+      font-family: 'Playfair Display', serif; font-size: 1.2rem; color: #1e293b;
+      font-weight: 600; padding: 10px 0; width: 100%; text-align: center;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+
+    /* ========== HERO SELLING (DARK & PREMIUM) ========== */
+    .sell-hero {
+      position: relative; height: 80vh; min-height: 600px;
+      /* Background Gelap dengan Aksen Gedung Mewah Malam Hari */
+      background: linear-gradient(to bottom, rgba(11, 17, 32, 0.7), var(--sell-bg-dark)), url('img/apart.jpg    ');
+      background-size: cover; background-position: center; background-attachment: fixed;
+      display: flex; align-items: center; justify-content: center; text-align: center;
+    }
+    .sell-hero-content { max-width: 800px; padding: 20px; }
+    .sell-hero h1 { 
+      font-size: clamp(3rem, 6vw, 5.5rem); margin-bottom: 20px; 
+      background: linear-gradient(to right, #fff, #cbd5e1); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .sell-hero p { font-size: 1.3rem; margin-bottom: 40px; color: #cbd5e1; font-weight: 300; }
+    
+    .btn-gold-outline {
+      display: inline-block; padding: 15px 40px; border: 2px solid var(--sell-gold);
+      color: var(--sell-gold); text-transform: uppercase; font-weight: 600; letter-spacing: 2px;
+      transition: 0.3s;
+    }
+    .btn-gold-outline:hover { background: var(--sell-gold); color: #000; box-shadow: 0 0 20px rgba(212, 175, 55, 0.4); }
+
+    /* ========== STATS SECTION ========== */
+    .stats-section { border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; text-align: center; }
+    .stat-item h3 { font-size: 3rem; color: var(--sell-gold); margin-bottom: 5px; }
+    .stat-item span { text-transform: uppercase; letter-spacing: 1px; font-size: 0.8rem; color: #fff; }
+
+    /* ========== WHY SELL WITH US ========== */
+    .feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-top: 60px; }
+    .feature-card {
+      background: var(--sell-bg-card); padding: 40px; border-radius: 4px;
+      border: 1px solid rgba(255,255,255,0.05); transition: 0.3s; position: relative; overflow: hidden;
+    }
+    .feature-card::before {
+      content:''; position: absolute; top: 0; left: 0; width: 3px; height: 0; background: var(--sell-gold); transition: 0.3s;
+    }
+    .feature-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
+    .feature-card:hover::before { height: 100%; }
+    
+    .feature-icon { font-size: 2.5rem; color: var(--sell-gold); margin-bottom: 25px; }
+    .feature-card h4 { font-size: 1.4rem; margin-bottom: 15px; }
+    .feature-card p { font-size: 0.95rem; line-height: 1.7; }
+
+    /* ========== THE PROCESS (Horizontal Line) ========== */
+    .process-section { background: #0F1623; }
+    .process-wrapper { 
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; margin-top: 60px; position: relative; 
+    }
+    /* Line Connector */
+    .process-wrapper::after {
+      content:''; position: absolute; top: 25px; left: 10%; right: 10%; height: 1px; background: rgba(255,255,255,0.1); z-index: 0;
+    }
+    
+    .process-step { position: relative; z-index: 1; text-align: center; }
+    .step-icon-box {
+      width: 50px; height: 50px; background: var(--sell-bg-dark); border: 1px solid var(--sell-gold);
+      border-radius: 50%; display: grid; place-items: center; margin: 0 auto 20px auto; color: var(--sell-gold);
+    }
+    .process-step h5 { margin-bottom: 10px; color: #fff; }
+    .process-step p { font-size: 0.85rem; }
+
+    /* ========== MARKETING SHOWCASE ========== */
+    .marketing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .mkt-img { position: relative; }
+    .mkt-img img { border-radius: 4px; border: 1px solid rgba(255,255,255,0.1); }
+    /* Gold Frame Effect */
+    .mkt-img::after {
+      content:''; position: absolute; top: 20px; left: 20px; width: 100%; height: 100%; 
+      border: 2px solid var(--sell-gold); z-index: -1;
+    }
+    .mkt-list li { margin-bottom: 15px; display: flex; align-items: start; gap: 10px; color: var(--sell-text-light); }
+    .mkt-list i { color: var(--sell-gold); margin-top: 5px; }
+
+    /* ========== FOOTER (Kembali ke Tema Terang Index) ========== */
+    footer { background: #F8FDFF; border-top: none; padding-top: 80px; color: #1e293b; margin-top: 0; }
+    /* Override dark text specifically for footer inside dark page */
+    footer h5 { color: #64748b !important; }
+    footer p, footer li, footer a { color: #333 !important; }
+    footer .foot-logo text { fill: #333 !important; }
+    
+    .foot-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 30px; padding-bottom: 50px; }
+    .foot-logo svg { height: 40px; margin-bottom: 15px; }
+    .social-icons { display: flex; gap: 10px; margin-top: 20px; }
+    .social-icons a { width: 35px; height: 35px; border-radius: 50%; border: 1px solid #ccc; display: grid; place-items: center; color: #555; }
+    .foot-col h5 { font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; }
+    .foot-col ul li { margin-bottom: 12px; }
+    .foot-bottom { border-top: 1px solid #eee; padding: 25px 0; display: flex; justify-content: space-between; font-size: 0.9rem; color: #888; }
+
+    /* RESPONSIVE */
+    @media (max-width: 960px) {
+      .nav-links { display: none; } .nav-toggle { display: block; right: 0; position: relative; }
+      .nav-inner { display: flex; justify-content: space-between; } .mobile-menu { display: flex; }
+      
+      .stats-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+      .feature-grid { grid-template-columns: 1fr; }
+      .process-wrapper { grid-template-columns: 1fr; gap: 40px; }
+      .process-wrapper::after { display: none; }
+      .marketing-grid { grid-template-columns: 1fr; }
+      .mkt-img::after { display: none; }
+      
+      .foot-grid { grid-template-columns: 1fr; text-align: left; }
+      .foot-bottom { flex-direction: column; gap: 10px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="nav">
+    <div class="wrap nav-inner">
+      <div class="nav-links">
+        <a href="buying.html">Buying</a>
+        <a href="renting.html">Renting</a>
+        <a href="selling.html" class="active">Selling</a> </div>
+
+      <a href="index.html" class="brand-logo">
+        <svg width="200" height="50" viewBox="0 0 200 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M25 10L29 20H40L31 27L34 38L25 32L16 38L19 27L10 20H21L25 10Z" fill="#D4AF37"/>
+            <text x="50" y="32" font-family="'Playfair Display', serif" font-weight="700" font-size="22" fill="#1e293b">Star Estate</text>
+            <text x="52" y="45" font-family="'Poppins', sans-serif" font-weight="400" font-size="10" letter-spacing="3" fill="#64748b">LAND CORP</text>
+        </svg>
+      </a>
+
+      <div class="nav-links nav-right">
+        <a href="about.html">About</a>
+        <a href="resources.html">Resources</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="nav-toggle" onclick="toggleMenu()">
+        <i class="bi bi-list"></i>
+      </div>
+
+      <div class="mobile-menu" id="mobileMenu">
+        <a href="buying.html">Buying</a>
+        <a href="renting.html">Renting</a>
+        <a href="selling.html">Selling</a>
+        <a href="about.html">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="sell-hero">
+    <div class="wrap sell-hero-content">
+      <h1>Unlock the True Value<br>of Your Property.</h1>
+      <p>Kami memadukan data pasar mendalam dengan strategi pemasaran kelas dunia untuk menjual properti Anda dengan harga tertinggi dalam waktu tersingkat.</p>
+      <a href="#valuation" class="btn-gold-outline">Get Free Valuation</a>
+    </div>
+  </section>
+
+  <section class="stats-section section-pad">
+    <div class="wrap stats-grid">
+      <div class="stat-item">
+        <h3>$2.5B+</h3>
+        <span>Total Sales Volume</span>
+      </div>
+      <div class="stat-item">
+        <h3>14 Days</h3>
+        <span>Avg. Time to Sell</span>
+      </div>
+      <div class="stat-item">
+        <h3>98%</h3>
+        <span>List-to-Sale Ratio</span>
+      </div>
+      <div class="stat-item">
+        <h3>50k+</h3>
+        <span>Global Buyers Database</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-pad">
+    <div class="wrap">
+      <div style="text-align:center; max-width:800px; margin:0 auto 60px auto;">
+        <h4 class="text-gold" style="text-transform:uppercase; letter-spacing:2px; margin-bottom:10px;">Why Choose Us</h4>
+        <h2 style="font-size:3rem;">The Star Estate Advantage</h2>
+      </div>
+
+      <div class="feature-grid">
+        <div class="feature-card">
+          <i class="bi bi-camera-reels feature-icon"></i>
+          <h4>Cinematic Marketing</h4>
+          <p>Kami tidak sekadar memfoto. Kami membuat film pendek sinematik dan fotografi HDR untuk membuat properti Anda tampil menonjol dan emosional.</p>
+        </div>
+        <div class="feature-card">
+          <i class="bi bi-globe feature-icon"></i>
+          <h4>Global Network</h4>
+          <p>Properti Anda akan dipasarkan tidak hanya secara lokal, tetapi juga ke jaringan investor internasional kami di Asia, Eropa, dan Amerika.</p>
+        </div>
+        <div class="feature-card">
+          <i class="bi bi-graph-up-arrow feature-icon"></i>
+          <h4>Data-Driven Pricing</h4>
+          <p>Analisis pasar real-time kami memastikan harga properti Anda kompetitif namun tetap memaksimalkan keuntungan Anda.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-pad process-section">
+    <div class="wrap marketing-grid">
+      <div class="mkt-content">
+        <h2 style="font-size:2.8rem; margin-bottom:30px;">Strategic Exposure.</h2>
+        <ul class="mkt-list">
+          <li><i class="bi bi-check-circle-fill"></i> <span>Listing premium di portal properti #1 (Rumah123, Lamudi, dll).</span></li>
+          <li><i class="bi bi-check-circle-fill"></i> <span>Kampanye iklan media sosial bertarget (FB/IG/TikTok Ads).</span></li>
+          <li><i class="bi bi-check-circle-fill"></i> <span>Email blast ke 50.000+ database investor eksklusif.</span></li>
+          <li><i class="bi bi-check-circle-fill"></i> <span>Open house eksklusif untuk pembeli serius dan terkurasi.</span></li>
+        </ul>
+        <a href="#contact" class="btn-gold-outline" style="margin-top:30px;">Start Selling Now</a>
+      </div>
+      <div class="mkt-img">
+        <img src="img/apart.jpg" alt="Marketing">
+      </div>
+    </div>
+  </section>
+
+  <section class="section-pad">
+    <div class="wrap">
+      <div style="text-align:center; margin-bottom:50px;">
+        <h2>Seamless Selling Process</h2>
+      </div>
+      <div class="process-wrapper">
+        <div class="process-step">
+          <div class="step-icon-box"><i class="bi bi-search"></i></div>
+          <h5>1. Valuation</h5>
+          <p>Analisis properti dan penetapan harga strategis.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-icon-box"><i class="bi bi-megaphone"></i></div>
+          <h5>2. Marketing</h5>
+          <p>Peluncuran kampanye visual dan digital.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-icon-box"><i class="bi bi-people"></i></div>
+          <h5>3. Negotiation</h5>
+          <p>Menyeleksi penawaran terbaik untuk Anda.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-icon-box"><i class="bi bi-house-check"></i></div>
+          <h5>4. Closing</h5>
+          <p>Pengurusan legalitas hingga dana cair.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-pad" id="valuation" style="background: linear-gradient(135deg, var(--sell-gold), #B8860B); color: #000; text-align: center;">
+    <div class="wrap">
+      <h2 style="color:#000; font-size:3rem; margin-bottom:20px;">What is your home worth?</h2>
+      <p style="color:#222; font-size:1.2rem; margin-bottom:40px; max-width:600px; margin-left:auto; margin-right:auto;">Dapatkan estimasi harga pasar properti Anda secara gratis dan rahasia dari para ahli kami.</p>
+      <form style="max-width:500px; margin:0 auto; display:flex; gap:10px;">
+        <input type="text" placeholder="Enter your property address..." style="flex:1; padding:15px; border:none; border-radius:4px;">
+        <button style="background:#000; color:#fff; border:none; padding:15px 30px; border-radius:4px; font-weight:600; cursor:pointer;">Get Valuation</button>
+      </form>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div class="foot-col">
+           <a href="index.html" class="foot-logo">
+             <svg width="180" height="40" viewBox="0 0 180 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20 5L23 15H35L26 22L29 33L20 27L11 33L14 22L5 15H17L20 5Z" fill="#D4AF37"/>
+                <text x="45" y="28" font-family="'Playfair Display', serif" font-weight="700" font-size="20" fill="#333">Star Estate</text>
+            </svg>
+           </a>
+           <p style="font-size:0.9rem;">Melayani area sekitarnya selama lebih dari 24 tahun.</p>
+           <div class="social-icons">
+             <a href="#"><i class="bi bi-facebook"></i></a>
+             <a href="#"><i class="bi bi-instagram"></i></a>
+             <a href="#"><i class="bi bi-twitter"></i></a>
+           </div>
+        </div>
+        <div class="foot-col">
+          <h5>Services</h5>
+          <ul>
+            <li><a href="buying.html">Buying</a></li>
+            <li><a href="renting.html">Renting</a></li>
+            <li><a href="selling.html">Selling</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="#">Resources</a></li>
+            <li><a href="#">Careers</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h5>Contact</h5>
+          <ul>
+            <li style="font-size:0.9rem;">(08) 6380 1212</li>
+            <li style="font-size:0.9rem;">info@starestate.com</li>
+            <li style="font-size:0.9rem;">1/590 Hay Street, USA</li>
+          </ul>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <div>&copy; 2026 Star Estate Land.</div>
+        <div>Design by Star Team</div>
+      </div>
+    </div>
+  </footer>
+
+  <style>
+    .floating-container { position: fixed; bottom: 30px; right: 30px; z-index: 9999; display: flex; flex-direction: column; gap: 15px; align-items: center; }
+    .float-btn { width: 55px; height: 55px; border-radius: 50%; display: grid; place-items: center; color: #fff; font-size: 26px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); transition: all 0.3s; cursor: pointer; text-decoration: none; border: 2px solid rgba(255,255,255,0.2); }
+    .float-btn:hover { transform: translateY(-5px); color: #fff; border-color: #fff; }
+    .btn-wa { background: #25D366; } .btn-top { background: #D4AF37; opacity: 0; visibility: hidden; transform: translateY(20px); } .btn-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
+    @media (max-width: 768px) { .floating-container { bottom: 20px; right: 20px; } .float-btn { width: 45px; height: 45px; font-size: 22px; } }
+  </style>
+  <div class="floating-container">
+    <a href="#" class="float-btn btn-top" id="backToTop"><i class="bi bi-arrow-up-short"></i></a>
+    <a href="https://api.whatsapp.com/send?phone=6281234567890" target="_blank" class="float-btn btn-wa"><i class="bi bi-whatsapp"></i></a>
+  </div>
+
+  <script>
+    function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('active'); }
+    
+    // Back to Top Logic
+    const backToTopBtn = document.getElementById("backToTop");
+    window.onscroll = function() {
+      if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        backToTopBtn.classList.add("show");
+      } else {
+        backToTopBtn.classList.remove("show");
+      }
+    };
+    backToTopBtn.addEventListener("click", function(e) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  </script>
+
+</body>
+</html>

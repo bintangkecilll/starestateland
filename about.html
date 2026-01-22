@@ -1,0 +1,510 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+  <meta name="format-detection" content="telephone=no" />
+
+  <title>About Us — Star Estate Land | Luxury & Professional Service</title>
+  <meta name="description" content="Mengenal lebih dekat Star Estate Land, pemimpin dalam layanan real estate mewah dan profesional dengan pengalaman puluhan tahun. Visi, misi, dan tim kami." />
+  <meta name="author" content="Star Estate Land Corp">
+
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="id_ID" />
+  <meta property="og:site_name" content="Star Estate Land" />
+  <meta property="og:title" content="About Us — Star Estate Land | Luxury & Professional Service" />
+  <meta property="og:description" content="Mengenal lebih dekat Star Estate Land, pemimpin dalam layanan real estate mewah dan profesional dengan pengalaman puluhan tahun." />
+  <meta property="og:url" content="https://www.websiteanda.com/about.html" />
+  <meta property="og:image" content="https://www.websiteanda.com/og-image-about.jpg" />
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#E1F5FE">
+  <meta name="msapplication-TileColor" content="#0F172A">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  </noscript>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+  <style>
+    /* ========== 
+       1. CORE STYLES (SAMA DENGAN INDEX)
+    ========== */
+    :root {
+      /* Warna Dasar Index (untuk Nav/Footer) */
+      --bg-body-index: #E1F5FE; 
+      --bg-white: #ffffff;
+      --text-dark: #1e293b;
+      --text-muted: #64748b;
+      
+      /* WARNA KHUSUS ABOUT (MEWAH & KONTRAS) */
+      --accent-gold: #D4AF37;
+      --dark-navy: #0F172A; /* Latar belakang utama yang gelap */
+      --rich-cream: #F8F6F1; /* Latar belakang terang yang elegan */
+      --text-light-gold: #ECE0C7; /* Teks terang di latar gelap */
+
+      --container: 1140px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { overflow-x: hidden; width: 100%; }
+
+    body { 
+      margin: 0; 
+      font-family: 'Poppins', sans-serif;
+      color: var(--text-dark); 
+      background: var(--bg-white); /* Default background */
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    h1, h2, h3, h4, h5 { 
+      font-family: 'Playfair Display', serif;
+      font-weight: 700; margin-top: 0; line-height: 1.2; color: var(--dark-navy);
+    }
+    
+    p { margin-bottom: 1.5rem; color: var(--text-muted); }
+    a { text-decoration: none; color: inherit; transition: 0.3s; }
+    img, svg { max-width: 100%; display: block; }
+    ul { list-style: none; padding: 0; margin: 0; }
+
+    .wrap { width: min(var(--container), 92%); margin-inline: auto; }
+    .section-pad { padding: 100px 0; }
+
+    /* Utility Classes untuk Kemewahan */
+    .text-gold { color: var(--accent-gold) !important; }
+    .text-navy { color: var(--dark-navy) !important; }
+    .bg-navy { background-color: var(--dark-navy); color: #fff; }
+    .bg-cream { background-color: var(--rich-cream); }
+    
+    .gold-divider {
+        width: 80px; height: 3px; background: var(--accent-gold); margin: 20px 0 30px 0;
+    }
+    .gold-divider.center { margin: 20px auto 30px auto; }
+
+    /* ========== 
+       2. NAVBAR (PERSIS SAMA DENGAN INDEX) 
+    ========== */
+    .nav {
+      position: sticky; top: 0; z-index: 1000;
+      background: rgba(225, 245, 254, 0.98); /* Menggunakan warna index */
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0,0,0,0.05); padding: 15px 0;
+    }
+    .nav-inner { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; position: relative; }
+    .nav-links { display: flex; gap: 30px; }
+    .nav-right { justify-content: flex-end; }
+    .nav-links a { font-weight: 500; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; color: var(--text-dark); }
+    .nav-links a:hover { color: var(--accent-gold); }
+    .brand-logo { display: flex; flex-direction: column; align-items: center; text-align: center; }
+    .nav-toggle { display: none; font-size: 2rem; cursor: pointer; color: #333; }
+
+    /* Mobile Menu */
+    .mobile-menu {
+      display: none; position: absolute; top: 100%; left: 0; width: 100%;
+      background: var(--bg-body-index); /* Warna index */
+      border-bottom: 3px solid var(--accent-gold);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      flex-direction: column; align-items: center; padding: 0; overflow: hidden;
+      max-height: 0; transition: max-height 0.4s ease-out; z-index: 999;
+    }
+    .mobile-menu.active { max-height: 400px; padding: 20px 0; }
+    .mobile-menu a {
+      font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--text-dark);
+      font-weight: 600; padding: 10px 0; width: 100%; text-align: center;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+    .mobile-menu a:last-child { border-bottom: none; }
+    .mobile-menu a:hover { color: var(--accent-gold); background: rgba(255,255,255,0.5); }
+
+    /* ========== 
+       STYLE KHUSUS HALAMAN ABOUT (MEWAH & ELEGAN) 
+    ========== */
+
+    /* 1. Hero Section About - Gelap & Dramatis */
+    .about-hero {
+      position: relative;
+      /* Ganti URL gambar di bawah dengan foto gedung mewah/interior yang gelap */
+      background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.95)), url('img/apart.jpg');
+      background-size: cover;
+      background-position: center;
+      padding: 180px 0 120px 0;
+      color: #fff;
+      text-align: center;
+    }
+    .about-hero h1 { font-size: clamp(3rem, 6vw, 5rem); color: var(--accent-gold); margin-bottom: 20px; }
+    .about-hero p.lead { font-size: 1.3rem; color: var(--text-light-gold); max-width: 700px; margin: 0 auto; font-weight: 300; }
+
+    /* 2. Our Story Section - Elegan & Bersih */
+    .story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .story-img { position: relative; padding: 20px; }
+    /* Efek bingkai emas di belakang foto */
+    .story-img::before {
+        content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+        border: 3px solid var(--accent-gold); z-index: 0; transform: translate(-20px, -20px);
+    }
+    .story-img img { position: relative; z-index: 1; border-radius: 4px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+    .story-content h2 { font-size: 2.8rem; }
+    .story-content p { font-size: 1.1rem; color: var(--text-muted); }
+
+    /* 3. Core Values - Gelap & Profesional */
+    .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-top: 60px; }
+    .value-card {
+        background: rgba(255,255,255,0.05); /* Transparan di atas background gelap */
+        padding: 40px; border: 1px solid rgba(212, 175, 55, 0.2); /* Garis emas tipis */
+        text-align: center; transition: 0.3s;
+    }
+    .value-card:hover { background: rgba(212, 175, 55, 0.1); border-color: var(--accent-gold); transform: translateY(-10px); }
+    .value-icon { font-size: 3rem; color: var(--accent-gold); margin-bottom: 25px; }
+    .value-card h3 { color: #fff; font-size: 1.5rem; margin-bottom: 15px; }
+    .value-card p { color: var(--text-light-gold); font-size: 0.95rem; }
+
+    /* 4. Leadership/Team - Bersih */
+    .team-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; margin-top: 60px; }
+    .team-member { text-align: center; }
+    .member-img { 
+        position: relative; overflow: hidden; margin-bottom: 20px; 
+        border-bottom: 3px solid var(--accent-gold);
+    }
+    .member-img img { width: 100%; transition: 0.5s; filter: grayscale(20%); }
+    .team-member:hover .member-img img { transform: scale(1.05); filter: grayscale(0%); }
+    .team-member h4 { font-size: 1.3rem; margin-bottom: 5px; }
+    .member-role { color: var(--accent-gold); font-weight: 600; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
+
+    /* ========== 
+       FOOTER (PERSIS SAMA DENGAN INDEX) 
+    ========== */
+    footer { background: #F8FDFF; border-top: 1px solid #E2E8F0; padding-top: 80px; }
+    .foot-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 30px; padding-bottom: 50px; }
+    .foot-logo svg { height: 40px; margin-bottom: 15px; }
+    .social-icons { display: flex; gap: 10px; margin-top: 20px; }
+    .social-icons a { width: 35px; height: 35px; border-radius: 50%; border: 1px solid #ccc; display: grid; place-items: center; color: #555; }
+    .foot-col h5 { font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px; color: #64748b; margin-bottom: 20px; }
+    .foot-col ul li { margin-bottom: 12px; }
+    .foot-col ul li a { font-size: 0.95rem; color: #333; }
+    .foot-bottom { border-top: 1px solid #eee; padding: 25px 0; display: flex; justify-content: space-between; font-size: 0.9rem; color: #888; }
+
+    /* RESPONSIVE */
+    @media (max-width: 960px) {
+      .nav-links { display: none; } .nav-toggle { display: block; right: 0; position: relative; }
+      .nav-inner { display: flex; justify-content: space-between; } .mobile-menu { display: flex; }
+      .foot-grid { grid-template-columns: 1fr; text-align: left; gap: 40px; }
+      .foot-bottom { flex-direction: column; gap: 10px; }
+      
+      /* Responsive About */
+      .about-hero { padding: 140px 0 80px 0; }
+      .about-hero h1 { font-size: 3rem; }
+      .story-grid, .values-grid, .team-grid { grid-template-columns: 1fr; gap: 40px; }
+      .story-img { order: -1; /* Foto di atas pada mobile */ }
+      .story-img::before { transform: translate(-10px, -10px); }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="nav">
+    <div class="wrap nav-inner">
+      <div class="nav-links">
+        <a href="index.html#buying">Buying</a>
+        <a href="index.html#renting">Renting</a>
+        <a href="index.html#selling">Selling</a>
+      </div>
+
+      <a href="index.html" class="brand-logo">
+        <svg width="200" height="50" viewBox="0 0 200 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M25 10L29 20H40L31 27L34 38L25 32L16 38L19 27L10 20H21L25 10Z" fill="#D4AF37"/>
+            <text x="50" y="32" font-family="'Playfair Display', serif" font-weight="700" font-size="22" fill="#1e293b">Star Estate</text>
+            <text x="52" y="45" font-family="'Poppins', sans-serif" font-weight="400" font-size="10" letter-spacing="3" fill="#64748b">LAND CORP</text>
+        </svg>
+      </a>
+
+      <div class="nav-links nav-right">
+        <a href="about.html" style="color: var(--accent-gold);">About</a>
+        <a href="index.html#resources">Resources</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+
+      <div class="nav-toggle" onclick="toggleMenu()">
+        <i class="bi bi-list"></i>
+      </div>
+
+      <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html#buying" onclick="toggleMenu()">Buying</a>
+        <a href="index.html#renting" onclick="toggleMenu()">Renting</a>
+        <a href="index.html#selling" onclick="toggleMenu()">Selling</a>
+        <a href="about.html" onclick="toggleMenu()" style="color: var(--accent-gold);">About</a>
+        <a href="index.html#contact" onclick="toggleMenu()">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="about-hero">
+      <div class="wrap">
+          <h1>The Legacy of Excellence.</h1>
+          <div class="gold-divider center"></div>
+          <p class="lead">Mendefinisikan ulang standar real estate mewah sejak 1998. Kami bukan sekadar agen; kami adalah kurator gaya hidup Anda.</p>
+      </div>
+  </section>
+
+  <section class="section-pad bg-cream">
+      <div class="wrap story-grid">
+          <div class="story-content">
+              <h4 class="text-gold" style="letter-spacing: 2px; text-transform: uppercase;">Our Story</h4>
+              <h2>Crafting Timeless Real Estate Experiences</h2>
+              <div class="gold-divider"></div>
+              <p>Star Estate Land didirikan dengan satu visi: memberikan layanan yang tak tertandingi di pasar properti premium. Selama lebih dari dua dekade, kami telah membangun reputasi berdasarkan integritas, diskresi, dan pemahaman mendalam tentang pasar kemewahan.</p>
+              <p>Kami percaya bahwa properti bukanlah sekadar bangunan, melainkan fondasi dari warisan dan impian Anda. Pendekatan kami yang dipersonalisasi memastikan setiap klien mendapatkan perhatian eksklusif yang layak mereka dapatkan.</p>
+          </div>
+          <div class="story-img">
+              <img loading="lazy" src="img/apart.jpg" alt="Our Story Team Photo">
+          </div>
+      </div>
+  </section>
+
+  <section class="section-pad bg-navy">
+      <div class="wrap">
+          <div class="section-title" style="text-align: center; margin-bottom: 60px;">
+              <h2 style="color: #fff; font-size: 2.8rem;">The Principles That Guide Us</h2>
+              <div class="gold-divider center"></div>
+          </div>
+          <div class="values-grid">
+              <div class="value-card">
+                  <i class="bi bi-gem value-icon"></i>
+                  <h3>Uncompromised Quality</h3>
+                  <p>Kami hanya menangani properti yang memenuhi standar tertinggi dalam desain, lokasi, dan pengerjaan.</p>
+              </div>
+              <div class="value-card">
+                  <i class="bi bi-shield-lock value-icon"></i>
+                  <h3>Absolute Integrity</h3>
+                  <p>Kepercayaan adalah aset terbesar kami. Kami beroperasi dengan transparansi penuh dan etika tanpa kompromi.</p>
+              </div>
+              <div class="value-card">
+                  <i class="bi bi-star value-icon"></i>
+                  <h3>Exclusive Access</h3>
+                  <p>Jaringan global kami memberikan klien akses ke peluang off-market yang tidak tersedia di tempat lain.</p>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <section class="section-pad bg-white">
+    <div class="wrap">
+        <div class="section-title" style="text-align: center; margin-bottom: 60px;">
+            <h2>Meet The Visionaries</h2>
+            <div class="gold-divider center"></div>
+            <p style="max-width: 700px; margin: 0 auto;">Tim kepemimpinan kami menggabungkan pengalaman puluhan tahun dengan inovasi modern untuk memimpin industri ini.</p>
+        </div>
+        
+        <div class="team-grid">
+            <div class="team-member">
+                <div class="member-img">
+                    <img loading="lazy" src="img/apart.jpg" alt="Alexander Sterling CEO">
+                </div>
+                <h4>Alexander Sterling</h4>
+                <span class="member-role">Founder & CEO</span>
+            </div>
+             <div class="team-member">
+                <div class="member-img">
+                    <img loading="lazy" src="img/hotel.jpg" alt="Victoria Laurent COO">
+                </div>
+                <h4>Victoria Laurent</h4>
+                <span class="member-role">Chief Operating Officer</span>
+            </div>
+             <div class="team-member">
+                <div class="member-img">
+                    <img loading="lazy" src="img/blog.jpg" alt="Marcus Thorne Head of Sales">
+                </div>
+                <h4>Marcus Thorne</h4>
+                <span class="member-role">Head of Luxury Sales</span>
+            </div>
+             <div class="team-member">
+                <div class="member-img">
+                    <img loading="lazy" src="img/rumah.jpg" alt="Elena Petrova Head of Investments">
+                </div>
+                <h4>Elena Petrova</h4>
+                <span class="member-role">Head of Investments</span>
+            </div>
+        </div>
+    </div>
+  </section>
+
+
+  <footer id="contact">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div class="foot-col">
+           <a href="index.html" class="foot-logo">
+             <svg width="180" height="40" viewBox="0 0 180 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20 5L23 15H35L26 22L29 33L20 27L11 33L14 22L5 15H17L20 5Z" fill="#D4AF37"/>
+                <text x="45" y="28" font-family="'Playfair Display', serif" font-weight="700" font-size="20" fill="#333">Star Estate</text>
+            </svg>
+           </a>
+           <p style="font-size:0.9rem;">Melayani area sekitarnya selama lebih dari 24 tahun dengan integritas tinggi.</p>
+           <div class="social-icons">
+             <a href="#"><i class="bi bi-facebook"></i></a>
+             <a href="#"><i class="bi bi-instagram"></i></a>
+             <a href="#"><i class="bi bi-twitter"></i></a>
+           </div>
+        </div>
+        <div class="foot-col">
+          <h5>Services</h5>
+          <ul>
+            <li><a href="index.html#buying">Buying</a></li>
+            <li><a href="index.html#renting">Renting</a></li>
+            <li><a href="index.html#selling">Selling</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="index.html#resources">Resources</a></li>
+            <li><a href="#">Careers</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h5>Contact</h5>
+          <ul>
+            <li style="font-size:0.9rem;">(08) 6380 1212</li>
+            <li style="font-size:0.9rem;">info@starestate.com</li>
+            <li style="font-size:0.9rem;">1/590 Hay Street, USA</li>
+          </ul>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <div>&copy; 2026 Star Estate Land.</div>
+        <div>Design by Star Team</div>
+      </div>
+    </div>
+  </footer>
+
+<style>
+  /* FLOATING BUTTONS CONTAINER */
+  .floating-container {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+
+  /* COMMON BUTTON STYLE */
+  .float-btn {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    color: #fff;
+    font-size: 28px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .float-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    color: #fff;
+  }
+  .float-btn i {
+    line-height: 0; /* Fix alignment issues */
+  }
+
+  /* WHATSAPP BUTTON */
+  .btn-wa {
+    background: #25D366; /* Warna resmi WA */
+  }
+  .btn-wa:hover {
+    background: #20bd5a;
+  }
+
+  /* BACK TO TOP BUTTON */
+  .btn-top {
+    background: #D4AF37; /* Warna Aksen Emas Website */
+    opacity: 0; /* Hidden by default */
+    visibility: hidden;
+    transform: translateY(20px); /* Start slightly lower */
+  }
+  /* Class yang ditambahkan via JS saat scroll */
+  .btn-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  .btn-top:hover {
+    background: #b3922d;
+  }
+
+  /* Responsive adjustment for smaller screens */
+  @media (max-width: 768px) {
+    .floating-container {
+      bottom: 20px;
+      right: 20px;
+    }
+    .float-btn {
+      width: 50px;
+      height: 50px;
+      font-size: 24px;
+    }
+  }
+</style>
+
+<div class="floating-container">
+  <a href="#" class="float-btn btn-top" id="backToTop" title="Kembali ke Atas">
+    <i class="bi bi-arrow-up-short"></i>
+  </a>
+
+  <a href="https://api.whatsapp.com/send?phone=6281234567890&text=Halo%20Star%20Estate%20Land,%20saya%20tertarik%20dengan%20layanan%20Anda." target="_blank" class="float-btn btn-wa" title="Hubungi via WhatsApp">
+    <i class="bi bi-whatsapp"></i>
+  </a>
+</div>
+
+<script>
+  // Menu Toggle Navbar
+  function toggleMenu() {
+    const menu = document.getElementById('mobileMenu');
+    menu.classList.toggle('active');
+  }
+
+  // SCRIPT UNTUK BACK TO TOP BUTTON
+  const backToTopBtn = document.getElementById("backToTop");
+
+  window.onscroll = function() {
+    scrollFunction();
+  };
+
+  function scrollFunction() {
+    // Munculkan tombol jika scroll lebih dari 300px
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+      backToTopBtn.classList.add("show");
+    } else {
+      backToTopBtn.classList.remove("show");
+    }
+  }
+
+  // Fungsi klik untuk scroll ke atas dengan mulus
+  backToTopBtn.addEventListener("click", function(e) {
+    e.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+</script>
+
+</body>
+</html>
